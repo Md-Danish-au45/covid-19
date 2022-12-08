@@ -6,10 +6,10 @@ go to git bash and go to directory where you want to clone the repository and wr
 
 
 ```bash
-https url
+HTTPS url :
 npm i  https://github.com/Md-Danish-au45/covid-19.git 
 
-SSL url
+SSH url :
 npm i   git@github.com:Md-Danish-au45/covid-19.git
 ```
 
