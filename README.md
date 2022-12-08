@@ -1,5 +1,4 @@
-#    -----------||FOLDERS ARE COVID-19 BRANCH||-----------------
-#                              ------||PLEASE GO TO COVID-19 BRANCH||-------------
+#                              [ PLEASE GO TO COVID-19 BRANCH ]
 
 clone the repository
 
