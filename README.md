@@ -6,7 +6,11 @@ go to git bash and go to directory where you want to clone the repository and wr
 
 
 ```bash
-npm i 
+https url
+npm i  https://github.com/Md-Danish-au45/covid-19.git 
+
+SSL url
+npm i   git@github.com:Md-Danish-au45/covid-19.git
 ```
 
 after you clone the projects the connect with mongo url
