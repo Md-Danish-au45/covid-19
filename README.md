@@ -1,4 +1,5 @@
-# covid-19 task
+# covid-19 task          -----------||FOLDERS ARE COVID-19 BRANCH||-----------------
+#                              ------||PLEASE GO TO COVID-19 BRANCH||-------------
 
 clone the repository
 
