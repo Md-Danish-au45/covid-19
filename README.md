@@ -1,5 +1,4 @@
 #                                                      covid-19 task
-
 clone the repository
 
 go to git bash and go to directory where you want to clone the repository and write 
