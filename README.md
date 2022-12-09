@@ -5,9 +5,9 @@ go to git bash and go to directory where you want to clone the repository and wr
 
 ```bash
 HTTPS url :
- https://github.com/Md-Danish-au45/covid-19.git 
+ git clone https://github.com/Md-Danish-au45/covid-19.git 
 SSH url :
-  git@github.com:Md-Danish-au45/covid-19.git
+ git clone git@github.com:Md-Danish-au45/covid-19.git
 ```
 
 install all pakages in gitbash
