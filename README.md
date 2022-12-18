@@ -1,9 +1,10 @@
 #                              [ PLEASE GO TO COVID-19 BRANCH ]
 
+![covid-19 flow](https://user-images.githubusercontent.com/82753592/208303990-9ee12cca-8fc5-401b-93c7-b4e442ca38a7.jpg)
+
 clone the repository
 
 go to git bash and go to directory where you want to clone the repository and write 
-
 
 ```bash
 npm i 
