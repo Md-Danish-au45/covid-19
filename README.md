@@ -1,3 +1,4 @@
+
 #                                                      covid-19 task
 clone the repository
 
@@ -47,6 +48,7 @@ nodemon index.js
 -> dotenv 
 
 ```
+![covid-19 flow](https://user-images.githubusercontent.com/82753592/208303990-9ee12cca-8fc5-401b-93c7-b4e442ca38a7.jpg)
 
 ## Collaborate with pvsvamsi
 
