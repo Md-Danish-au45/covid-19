@@ -9,20 +9,35 @@ const createUser = async (req,res)=> {
         const saltRounds=10;
 
         if(!name || typeof name!="string")
-        return res.status(400).send({status:"Failure",message:"name is requried Fied & should have a string value"})
+        return res.status(400).send({
+            status:"Failure",
+            message:"name is requried Fied & should have a string value"
+        })
 
         if(!phoneNumber || typeof phoneNumber!="string")
-        return res.status(400).send({status:"Failure",message:"phoneNumber is requried Fied  & should have a string value"})
+        return res.status(400).send({
+            status:"Failure",
+            message:"phoneNumber is requried Fied  & should have a string value"
+        })
 
         
         if(!age || typeof age!= "number")
-        return res.status(400).send({status:"Failure",message:"age is requried Fied  & should have a number value"})
+        return res.status(400).send({
+            status:"Failure",
+            message:"age is requried Fied  & should have a number value"
+        })
 
         if(!pincode || typeof pincode !="string")
-        return res.status(400).send({status:"Failure",message:"pincode is requried Fied  & should have a string value"})
+        return res.status(400).send({
+            status:"Failure",
+            message:"pincode is requried Fied  & should have a string value"
+        })
 
         if(!aadhaarNo || typeof aadhaarNo !="string")
-        return res.status(400).send({status:"Failure",message:"aadhaarNo is requried Fied  & should have a string value"})
+        return res.status(400).send({
+            status:"Failure",
+            message:"aadhaarNo is requried Fied  & should have a string value"
+        })
 
         if(!password || typeof password!="string")
         return res.status(400).send({status:"Failure",message:"password is requried Fied  & should have a string value"})
