@@ -9,26 +9,42 @@ const isInputDateValid =  date=> moment(date, 'DD-MM-YYYY',true).isValid()
 
 const login = async(req,res)=>{
     try {
-        const {phoneNumber,password} = req.body
+        const phoneNumber = req.body.phoneNumber
+        const password = req.body.password
+        const name = req.body.name
+
+        console.log(phoneNumber)
+        console.log(password)
+        console.log(name)
 
         //phone Number valid or not
-        const adminData = await adminModel.findOne({phoneNumber}).lean()
-        if(!adminData)
-        return res.status(400).send({status:"Failure",message:"Provide valid mobile Number"})
-        console.log(password)
-        
+        const adminData = await adminModel.findOne({phoneNumber},{password},{name})
 
-        if(password!=adminData.password)
-        return res.status(400).send({status:"Failure",message:"Provide valid password"})
+        // if adminData isnot there then show message:"provide valid mobile number"
+        if(!phoneNumber)
+        return res.status(400).send({
+            status:"Failure",
+            message:"Provide valid mobile Number"
+        })
 
-        const token = jwt.sign({id:adminData._id,type:"admin"},"covid",{ expiresIn: '60m'})
+        if(!name)
+        return res.status(400).send({
+            status:"Failure",
+            message:"Provide valid name"
+        })
 
-        res.header('x-api-key', token);
+        // const token = jwt.sign({id:adminData,type:"admin"},"covid",{ expiresIn: '900d'})
+
+        // res.header('x-api-key', token);
         res.status(200).send({ status: true, data: "User login successful" })
+
 
     } catch (error) {
         console.log(error)
-        return res.status(500).send({status:"Falure",message:"Internal Server Error"})
+        return res.status(500).send({
+            status:"Falure",
+            message:"Internal Server Error"
+        })
     }
 }
 
@@ -60,7 +76,10 @@ const getUsers = async (req,res) => {
 
         const users = await userModel.find(conditions)
 
-        return res.status(200).send({status:"Success",data:users})
+        return res.status(200).send({
+            status:"Success",
+            data:users
+        })
 
     } catch (error) {
         console.log(error)

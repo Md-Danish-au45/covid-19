@@ -1,9 +1,18 @@
 const mongoose = require("mongoose")
 
 const slotSchema = mongoose.Schema({
-    start:{ type:Date,required:true},
-    end: { type:Date,required:true},
-    capacity: { type:Number,required:true}
+    start:{
+         type:Date,
+         required:true
+        },
+    end: {
+         type:Date,
+         required:true
+        },
+    capacity: { 
+        type:Number,
+        required:true
+    }
 },{timestamps:true})
 
 

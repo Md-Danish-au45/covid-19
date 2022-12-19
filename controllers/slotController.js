@@ -1,34 +1,60 @@
 const slotModel = require("../models/slotModel")
 const moment = require("moment")
 
-const isInputDateValid =  date=> moment(date, 'DD-MM-YYYY',true).isValid()
-const isInputTimeValid =  time=> moment(time, 'HH:mm',true).isValid()
+// const isInputDateValid =  date=> moment(date, 'DD-MM-YYYY',true).isValid()
+// const isInputTimeValid =  time=> moment(time, 'HH:mm',true).isValid()
+
+
+const isInputDateValid =  date=> moment(date,true).isValid()
+const isInputTimeValid =  time=> moment(time,true).isValid()
+
 
 const createSlots = async (req,res)=> {
     try {
        let {startDate,endDate,startTime,endTime,capacity,duration}= req.body 
 
        if(capacity==null || capacity==undefined || duration ==null || duration==undefined)
-       return res.status(400).send({status:"Failure",message:"capacity & duration is required field"})
+       return res.status(400).send({
+        status:"Failure",
+        message:"capacity & duration is required field"
+      })
 
        if(typeof capacity!="number" || typeof duration!="number" || !capacity.toString().match(/^\d+$/) || !duration.toString().match(/^\d+$/) || duration<0 || duration>60  ) 
-       return res.status(400).send({status:"Failure",message:"capacity and duration should have a number as a value"})
+       return res.status(400).send({
+        status:"Failure",
+        message:"capacity and duration should have a number as a value"
+      })
        
 
         if(!isInputDateValid(startDate))
-        return res.status(400).send({status:"Failure",message:"Enter valid startDate in DD-MM-YYYY format"})
+        return res.status(400).send({
+          status:"Failure",
+          message:"Enter valid startDate"
+        })
 
         if(!isInputDateValid(endDate))
-        return res.status(400).send({status:"Failure",message:"Enter valid endDate in DD-MM-YYYY format"})
+        return res.status(400).send({
+          status:"Failure",
+          message:"Enter valid endDate"
+        })
 
         if(!isInputTimeValid(startTime))
-        return res.status(400).send({status:"Failure",message:"Enter valid startTime in HH:MM 24 hour format"})
+        return res.status(400).send({
+          status:"Failure",
+          message:"Enter valid startTime in HH:MM 24 hour format"
+        })
 
         if(!isInputTimeValid(endTime))
-        return res.status(400).send({status:"Failure",message:"Enter valid endTime in HH:MM 24 hour format"})
+        return res.status(400).send({
+          status:"Failure",
+          message:"Enter valid endTime in HH:MM 24 hour format"
+        })
 
         if(moment(endTime, ['HH:mm']).format('HH:mm') <= moment(startTime, ['HH:mm']).format('HH:mm')){
-            return res.status(400).send({status:"Failure",message:"Start Time should be greater than end time"})
+            return res.status(400).send({
+              status:"Failure",
+              message:"Start Time should be greater than end time"
+            })
         }
 
         const slotData =[]
@@ -50,7 +76,7 @@ const createSlots = async (req,res)=> {
             capacity
           })
 
-        //   console.log("startDate===>",startDate,"startTime===>",tempStartTime," slotEndTime===> ",slotEndTime," endDate===>",endDate)
+          // console.log("startDate===>",startDate,"startTime===>",tempStartTime," slotEndTime===> ",slotEndTime," endDate===>",endDate)
 
           tempStartTime =slotEndTime
 
